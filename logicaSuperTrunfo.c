@@ -2,6 +2,7 @@
 //declaração de funções
 void get_info(void);
 void print_results(void);
+void print_winner(void);
 
 // Declaração das variáveis
 char nome[20], nome2[20], codigo[5], codigo2[5], estado[20], estado2[20];
@@ -9,13 +10,39 @@ int populacao, populacao2, p_turisticos, p_turisticos2;
 float area, area2, pib, pib2, densidade_pop, densidade_pop2, pib_c, pib_c2;
 
 int main() {
-    get_info();
-    densidade_pop = (populacao / area);
-    densidade_pop2 = (populacao2 / area2);
-    pib_c = (pib / populacao);
-    pib_c2 = (pib2 / populacao2);
-    print_results();
-  
+    int menu = 3;
+    printf("*** SUPER TRUNFO ***\n**ESCOLHA SUA OPÇÃO DE 1 A 3**\n1 - JOGAR\n2 - REGRAS\n3 - SAIR\n");
+    scanf("%d", &menu);
+    switch (menu)
+    {
+    case 1:
+
+        get_info();
+        densidade_pop = (populacao / area);
+        densidade_pop2 = (populacao2 / area2);
+        pib_c = (pib / populacao);
+        pib_c2 = (pib2 / populacao2);
+        print_results();
+        print_winner(); 
+        break;
+    
+    case 2:
+        
+        printf("\n* INSIRA AS INFORMAÇÕES DA CARTA\n* ESCOLHA O ATRIBUTO PARA A BATALHA\n\n");
+
+        break;
+
+    case 3:
+        printf("*** SAINDO DO JOGO ***\n\n");
+
+        break;
+
+    default:
+        printf("OPÇÃO INVÁLIDA\n\n");
+
+        break;
+    }
+
     return 0;
 }
 
@@ -66,74 +93,132 @@ void print_results() {
     estado, nome, codigo, populacao, p_turisticos, area, pib, densidade_pop, pib_c);
     printf("Carta 2: ESTADO: %s, CIDADE: %s, CÓDIGO: %s, POPULAÇÃO: %d, PONTOS TURISTICOS: %d, ÁREA: %.2f, PIB: %.2f, DENSIDADE POPULACIONAL: %.2f, PIB PER CAPITA: %.2f\n\n",
     estado2, nome2, codigo2, populacao2, p_turisticos2, area2, pib2, densidade_pop2, pib_c2);
-    printf("***RESULTADO DA BATALHA***\n");
 
+}
 
-    if (populacao > populacao2) {
-        printf("%s é a vencedora em população\n", nome);
-    }
-    else if (populacao < populacao2) {
-        printf("%s é a vencedora em população\n", nome2);
-    }
-    else {
-        printf("Temos um empate em população\n");
-    }
+void print_winner() {
+    int menu = 6;
+    printf("** ESCOLHA O ATRIBUTO PARA A BATALHA **\n");
+    printf("1 - POPULAÇÃO\n2 - PONTOS TURISTICOS\n3 - ÁREA\n4 - PIB\n5 - DENSIDADE POPULACIONAL\n6 - PIB PER CAPITA\n");
+    scanf("%d", &menu);
+    switch (menu)
+    {
+    case 1:
+        if (populacao > populacao2)
+        {
+            printf("%s vence no atributo de população\n\n", nome);
+        }
 
+        else if (populacao < populacao2)
+        {        
+            printf("%s vence no atributo de população\n\n", nome2);    
+        }
 
-    if (p_turisticos > p_turisticos2) {
-        printf("%s é a vencedora em pontos turisticos\n", nome);
-    }
-    else if (p_turisticos < p_turisticos2) {
-        printf("%s é a vencedora em pontos turisticos\n", nome2);
-    }
-    else {
-        printf("Temos um empate em pontos turisticos\n");
-    }
+        else
+        {
+            printf("Temos um empate em população\n\n");
+        }
+        
+        break;
 
+    case 2:
 
-    if (area > area2) {
-        printf("%s é a vencedora em Área\n", nome);
-    }
-    else if (area < area2) {
-        printf("%s é a vencedora em Área\n", nome2);
-    }
-    else {
-        printf("Temos um empate em Área\n");
-    }
+        if (p_turisticos > p_turisticos2)
+        {
+            printf("%s vence no atributo de pontos turisticos\n\n", nome);
+        }
 
+        else if (p_turisticos < p_turisticos2)
+        {        
+            printf("%s vence no atributo de pontos turisticos\n\n", nome2);    
+        }
 
-    if (pib > pib2) {
-        printf("%s é a vencedora em PIB\n", nome);
-    }
-    else if (pib < pib2) {
-        printf("%s é a vencedora em PIB\n", nome2);
-    }
-    else {
-        printf("Temos um empate em PIB\n");
-    }
+        else
+        {
+            printf("Temos um empate em pontos turisticos\n\n");
+        }
+   
+        break;
 
+    case 3:
 
-    if (densidade_pop2 > densidade_pop) {
-        printf("%s é a vencedora em densidade populacional\n", nome);
-    }
-    else if (densidade_pop2 < densidade_pop) {
-        printf("%s é a vencedora em densidade populacional\n", nome2);
-    }
-    else {
-        printf("Temos um empate em densidade populacional\n");
-    }
+        if (area > area2)
+        {
+            printf("%s vence no atributo de Área\n\n", nome);
+        }
 
+        else if (area < area2)
+        {        
+            printf("%s vence no atributo de Área\n\n", nome2);    
+        }
 
-    if (pib_c > pib_c2) {
-        printf("%s é a vencedora em PIB per capita\n", nome);
-    }
-    else if (pib_c < pib_c2) {
-        printf("%s é a vencedora em PIB per capita\n", nome2);
-    }
-    else {
-        printf("Temos um empate em PIB per capita\n");
-    }
+        else
+        {
+            printf("Temos um empate em Área\n\n");
+        }
+   
+        break;
 
-    printf("\n\n");
+    case 4:
+
+        if (pib > pib2)
+        {
+            printf("%s vence no atributo de PIB\n\n", nome);
+        }
+
+        else if (pib < pib2)
+        {        
+            printf("%s vence no atributo de PIB\n\n", nome2);    
+        }
+
+        else
+        {
+            printf("Temos um empate em PIB\n\n");
+        }
+   
+        break;
+
+    case 5:
+
+        if (densidade_pop < densidade_pop2)
+        {
+            printf("%s vence no atributo de densidade populacional\n\n", nome);
+        }
+
+        else if (densidade_pop > densidade_pop2)
+        {        
+            printf("%s vence no atributo de densidade populacional\n\n", nome2);    
+        }
+
+        else
+        {
+            printf("Temos um empate em densidade populacional\n\n");
+        }
+   
+        break;
+
+    case 6:
+
+        if (pib_c > pib_c2)
+        {
+            printf("%s vence no atributo de PIB per capita\n\n", nome);
+        }
+
+        else if (pib_c < pib_c2)
+        {        
+            printf("%s vence no atributo de PIB per capita\n\n", nome2);    
+        }
+
+        else
+        {
+            printf("Temos um empate em PIB per capita\n\n");
+        }
+   
+        break;
+
+    default:
+
+        break;
+    }
 
 }
