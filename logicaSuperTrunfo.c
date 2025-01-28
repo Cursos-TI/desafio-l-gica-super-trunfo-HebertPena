@@ -28,7 +28,7 @@ int main() {
     
     case 2:
         
-        printf("\n* INSIRA AS INFORMAÇÕES DA CARTA\n* ESCOLHA O ATRIBUTO PARA A BATALHA\n\n");
+        printf("\n* INSIRA AS INFORMAÇÕES DA CARTA\n* ESCOLHA 2 ATRIBUTOS PARA A BATALHA\n\n");
 
         break;
 
@@ -98,127 +98,104 @@ void print_results() {
 
 void print_winner() {
     int menu = 6;
-    printf("** ESCOLHA O ATRIBUTO PARA A BATALHA **\n");
+    int menu2 = 6;
+    int carta1 = 0;
+    int carta2 = 0;
+    printf("** ESCOLHA 2 ATRIBUTOS PARA A BATALHA **\n");
+    printf("** DIGITE 1 NÚMERO DÊ ENTER, DIGITE O SEGUNDO NUMERO E DÊ ENTER NOVAMENTE **\n");
     printf("1 - POPULAÇÃO\n2 - PONTOS TURISTICOS\n3 - ÁREA\n4 - PIB\n5 - DENSIDADE POPULACIONAL\n6 - PIB PER CAPITA\n");
     scanf("%d", &menu);
+    scanf("%d", &menu2);
+    printf("\n");
+
     switch (menu)
     {
     case 1:
-        if (populacao > populacao2)
-        {
-            printf("%s vence no atributo de população\n\n", nome);
-        }
-
-        else if (populacao < populacao2)
-        {        
-            printf("%s vence no atributo de população\n\n", nome2);    
-        }
-
-        else
-        {
-            printf("Temos um empate em população\n\n");
-        }
+        (populacao > populacao2) ? (printf("%s vence no atributo de população.\n\n", nome), carta1++) : (printf("%s vence no atributo de população.\n\n", nome2), carta2++); 
         
         break;
 
     case 2:
 
-        if (p_turisticos > p_turisticos2)
-        {
-            printf("%s vence no atributo de pontos turisticos\n\n", nome);
-        }
-
-        else if (p_turisticos < p_turisticos2)
-        {        
-            printf("%s vence no atributo de pontos turisticos\n\n", nome2);    
-        }
-
-        else
-        {
-            printf("Temos um empate em pontos turisticos\n\n");
-        }
-   
+        (p_turisticos > p_turisticos2) ? (printf("%s vence no atributo de pontos turisticos.\n\n", nome), carta1++) : 
+        (printf("%s vence no atributo de pontos turisticos.\n\n", nome2), carta2++);
+        
         break;
 
     case 3:
 
-        if (area > area2)
-        {
-            printf("%s vence no atributo de Área\n\n", nome);
-        }
+        (area > area2) ? (printf("%s vence no atributo de Área.\n\n", nome), carta1++) : (printf("%s vence no atributo de Área.\n\n", nome2), carta2++);
 
-        else if (area < area2)
-        {        
-            printf("%s vence no atributo de Área\n\n", nome2);    
-        }
-
-        else
-        {
-            printf("Temos um empate em Área\n\n");
-        }
-   
         break;
 
     case 4:
 
-        if (pib > pib2)
-        {
-            printf("%s vence no atributo de PIB\n\n", nome);
-        }
+        (pib > pib2) ? (printf("%s vence no atributo de PIB.\n\n", nome), carta1++) : (printf("%s vence no atributo de PIB.\n\n", nome2), carta2++);
 
-        else if (pib < pib2)
-        {        
-            printf("%s vence no atributo de PIB\n\n", nome2);    
-        }
-
-        else
-        {
-            printf("Temos um empate em PIB\n\n");
-        }
-   
         break;
 
     case 5:
 
-        if (densidade_pop < densidade_pop2)
-        {
-            printf("%s vence no atributo de densidade populacional\n\n", nome);
-        }
+        (densidade_pop < densidade_pop2) ? (printf("%s vence no atributo de densidade populacional.\n\n", nome), carta1++) : 
+        (printf("%s vence no atributo de densidade populacional.\n\n", nome2), carta2++);
 
-        else if (densidade_pop > densidade_pop2)
-        {        
-            printf("%s vence no atributo de densidade populacional\n\n", nome2);    
-        }
-
-        else
-        {
-            printf("Temos um empate em densidade populacional\n\n");
-        }
-   
         break;
 
     case 6:
 
-        if (pib_c > pib_c2)
-        {
-            printf("%s vence no atributo de PIB per capita\n\n", nome);
-        }
+        (pib_c > pib_c2) ? (printf("%s vence no atributo de PIB per capita.\n\n", nome), carta1++) : (printf("%s vence no atributo de PIB per capita.\n\n", nome2), carta2++);
 
-        else if (pib_c < pib_c2)
-        {        
-            printf("%s vence no atributo de PIB per capita\n\n", nome2);    
-        }
-
-        else
-        {
-            printf("Temos um empate em PIB per capita\n\n");
-        }
-   
         break;
 
     default:
 
         break;
     }
+
+    switch (menu2)
+    {
+    case 1:
+        (populacao > populacao2) ? (printf("%s vence no atributo de população.\n\n", nome), carta1++) : (printf("%s vence no atributo de população.\n\n", nome2), carta2++); 
+        
+        break;
+
+    case 2:
+
+        (p_turisticos > p_turisticos2) ? (printf("%s vence no atributo de pontos turisticos.\n\n", nome), carta1++) : 
+        (printf("%s vence no atributo de pontos turisticos.\n\n", nome2), carta2++);
+        
+        break;
+
+    case 3:
+
+        (area > area2) ? (printf("%s vence no atributo de Área.\n\n", nome), carta1++) : (printf("%s vence no atributo de Área.\n\n", nome2), carta2++);
+
+        break;
+
+    case 4:
+
+        (pib > pib2) ? (printf("%s vence no atributo de PIB.\n\n", nome), carta1++) : (printf("%s vence no atributo de PIB.\n\n", nome2), carta2++);
+
+        break;
+
+    case 5:
+
+        (densidade_pop < densidade_pop2) ? (printf("%s vence no atributo de densidade populacional.\n\n", nome), carta1++) : 
+        (printf("%s vence no atributo de densidade populacional.\n\n", nome2), carta2++);
+
+        break;
+
+    case 6:
+
+        (pib_c > pib_c2) ? (printf("%s vence no atributo de PIB per capita.\n\n", nome), carta1++) : (printf("%s vence no atributo de PIB per capita.\n\n", nome2), carta2++);
+
+        break;
+
+    default:
+
+        break;
+    }
+
+    (carta1 > carta2) ? printf("%s venceu a batalha!\n", nome) : (carta1 < carta2) ? printf("%s venceu a batalha!\n", nome2) : printf("EMPATE!\n\n");
 
 }
