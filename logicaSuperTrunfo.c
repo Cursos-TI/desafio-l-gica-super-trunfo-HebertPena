@@ -9,6 +9,7 @@ char nome[20], nome2[20], codigo[5], codigo2[5], estado[20], estado2[20];
 int populacao, populacao2, p_turisticos, p_turisticos2;
 float area, area2, pib, pib2, densidade_pop, densidade_pop2, pib_c, pib_c2;
 
+// Função main possui um switch com um menu interativo que possibilita jogar, ver as regras ou sair do programa
 int main() {
     int menu = 3;
     printf("*** SUPER TRUNFO ***\n**ESCOLHA SUA OPÇÃO DE 1 A 3**\n1 - JOGAR\n2 - REGRAS\n3 - SAIR\n");
@@ -97,10 +98,13 @@ void print_results() {
 }
 
 void print_winner() {
+    // Variáveis com o numero de opções dos dois switchs e a pontuação das cartas de acordo com os atributos escolhidos
     int menu = 6;
     int menu2 = 6;
     int carta1 = 0;
     int carta2 = 0;
+
+    // Menu interativo com as oções das escolhas dos atributos
     printf("** ESCOLHA 2 ATRIBUTOS PARA A BATALHA **\n");
     printf("** DIGITE 1 NÚMERO DÊ ENTER, DIGITE O SEGUNDO NUMERO E DÊ ENTER NOVAMENTE **\n");
     printf("1 - POPULAÇÃO\n2 - PONTOS TURISTICOS\n3 - ÁREA\n4 - PIB\n5 - DENSIDADE POPULACIONAL\n6 - PIB PER CAPITA\n");
@@ -108,6 +112,7 @@ void print_winner() {
     scanf("%d", &menu2);
     printf("\n");
 
+    // Switch com o primeiro atributo escolhido
     switch (menu)
     {
     case 1:
@@ -151,7 +156,8 @@ void print_winner() {
 
         break;
     }
-
+    
+    //Switch com o  segundo atributo escolhido
     switch (menu2)
     {
     case 1:
@@ -196,6 +202,7 @@ void print_winner() {
         break;
     }
 
+    //ternário aninhado com o resultado final da batalha
     (carta1 > carta2) ? printf("%s venceu a batalha!\n", nome) : (carta1 < carta2) ? printf("%s venceu a batalha!\n", nome2) : printf("EMPATE!\n\n");
 
 }
